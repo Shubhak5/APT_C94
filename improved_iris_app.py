@@ -38,7 +38,7 @@ log_reg = LogisticRegression(n_jobs = -1)
 log_reg.fit(X_train, y_train)
 
 # Create a function 'prediction()' which accepts model, SepalLength, SepalWidth, PetalLength, PetalWidth as input and returns species name.
-@st.cache_data()
+@st.cache()
 def prediction(model, sepal_length, sepal_width, petal_length, petal_width):
   	species = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])
   	species = species[0]
